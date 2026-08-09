@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transaction History | X ELECTRONICES</title>
+  <meta name="description" content="X ELECTRONICES customer transaction history portal for registered customers. View service records and transaction history using your registered mobile number.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://xelectronices.in/transactions.html">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <style>
+    :root{--navy:#1B2A57;--navy2:#263a78;--orange:#F7931E;--ink:#172033;--muted:#667085;--bg:#f5f8fc;--card:#fff;--line:#e7ebf2;--success:#14804a}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--ink);background:linear-gradient(135deg,#f7faff,#eef4ff);min-height:100vh}
+    a{color:inherit}
+    .topbar{background:var(--navy);color:#fff;font-size:13px}
+    .topbar-inner{max-width:1180px;margin:auto;padding:9px 18px;display:flex;justify-content:space-between;gap:12px;align-items:center}
+    .topbar a{color:#fff;text-decoration:none}
+    .wrap{width:min(1120px,calc(100% - 28px));margin:auto}
+    header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+    .nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .brand img{width:48px;height:48px;object-fit:contain}
+    .brand b{display:block;font-size:18px;color:var(--navy);letter-spacing:.3px}
+    .brand small{display:block;color:var(--muted);font-size:11px;margin-top:2px}
+    .back{color:var(--navy);font-weight:700;text-decoration:none;border:1px solid var(--line);padding:10px 15px;border-radius:12px;background:#fff}
+    .hero{text-align:center;padding:42px 12px 28px}
+    .eyebrow{display:inline-block;color:var(--orange);font-size:12px;font-weight:800;letter-spacing:1.4px;margin-bottom:10px}
+    h1{margin:0;color:var(--navy);font-size:clamp(30px,5vw,48px);line-height:1.08}
+    .hero p{max-width:700px;margin:14px auto 0;color:var(--muted);font-size:16px;line-height:1.6}
+    .search-card{max-width:700px;margin:12px auto 26px;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:0 16px 45px rgba(27,42,87,.10)}
+    .search-card label{display:block;text-align:left;font-size:13px;font-weight:800;color:var(--navy);margin-bottom:8px}
+    .search-row{display:flex;gap:10px}
+    input{width:100%;height:50px;border:1px solid #d7ddea;border-radius:13px;padding:0 15px;font-size:16px;outline:none}
+    input:focus{border-color:var(--orange);box-shadow:0 0 0 4px rgba(247,147,30,.13)}
+    button{border:0;border-radius:13px;background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;font-weight:800;padding:0 23px;cursor:pointer;min-width:110px}
+    button:hover{transform:translateY(-1px)}
+    .hint{font-size:12px;color:var(--muted);margin:9px 0 0;text-align:left}
+    .notice{max-width:700px;margin:0 auto 24px;background:#fff8ef;border:1px solid #ffd9ad;color:#7a4a12;border-radius:14px;padding:12px 14px;font-size:12px;line-height:1.5}
+    .hidden{display:none!important}
+    .profile{background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:0 12px 35px rgba(27,42,87,.08);margin:20px 0}
+    .profile-grid{display:grid;grid-template-columns:92px 1fr auto;gap:18px;align-items:center}
+    .avatar{width:92px;height:92px;border-radius:18px;object-fit:cover;border:3px solid var(--orange);background:#eef2f7}
+    .profile h2{margin:0 0 6px;color:var(--navy);font-size:24px}
+    .meta{display:flex;flex-wrap:wrap;gap:7px}
+    .pill{background:#f2f5fa;border:1px solid var(--line);border-radius:999px;padding:7px 10px;font-size:12px;color:#4b5565}
+    .member{display:inline-block;background:var(--navy);color:#fff;border-radius:999px;padding:8px 12px;font-size:12px;font-weight:800;margin-bottom:8px}
+    .profile-action{white-space:nowrap;background:var(--orange);color:#fff;text-decoration:none;font-weight:800;padding:11px 14px;border-radius:12px}
+    .dashboard{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin:20px 0}
+    .stat{background:#fff;border:1px solid var(--line);border-radius:18px;padding:17px;text-align:center;box-shadow:0 8px 25px rgba(27,42,87,.06)}
+    .stat strong{display:block;font-size:24px;color:var(--navy)}
+    .stat span{font-size:12px;color:var(--muted)}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:26px 0 12px}
+    .section-head h2{margin:0;color:var(--navy);font-size:22px}
+    .section-head p{margin:0;color:var(--muted);font-size:12px}
+    .table-wrap{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:auto;box-shadow:0 8px 28px rgba(27,42,87,.06)}
+    table{width:100%;border-collapse:collapse;min-width:760px}
+    th,td{padding:12px 11px;border-bottom:1px solid var(--line);text-align:left;font-size:13px}
+    th{background:var(--navy);color:#fff;font-size:12px;position:sticky;top:0}
+    tr:last-child td{border-bottom:0}
+    tbody tr:hover{background:#fff8ef}
+    .cards{display:none}
+    .txn-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:15px}
+    .txn-top{display:flex;justify-content:space-between;gap:10px;margin-bottom:10px}
+    .txn-service{font-weight:800;color:var(--navy)}
+    .txn-amount{font-weight:900;color:var(--success)}
+    .txn-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:12px}
+    .txn-grid div{background:#f7f9fc;border-radius:9px;padding:8px}
+    .txn-grid small{display:block;color:var(--muted);margin-bottom:3px}
+    .more{display:block;margin:15px auto 0;background:var(--orange);padding:12px 22px}
+    .empty{padding:28px;text-align:center;color:var(--muted)}
+    footer{text-align:center;color:var(--muted);font-size:12px;padding:30px 15px 40px}
+    .error{color:#a61b1b;background:#fff1f1;border:1px solid #ffcaca;padding:12px;border-radius:12px;text-align:center;margin:15px 0}
+    @media(max-width:760px){
+      .topbar-inner{justify-content:center;text-align:center}.topbar-inner span,.topbar-inner strong{display:none}
+      .nav{min-height:64px}.brand img{width:42px;height:42px}.brand b{font-size:16px}.brand small{font-size:9px}
+      .back{padding:8px 10px;font-size:12px}
+      .hero{padding-top:30px}.search-row{flex-direction:column}button{height:48px;width:100%}
+      .profile-grid{grid-template-columns:70px 1fr}.avatar{width:70px;height:70px}.profile-action{grid-column:1/-1;text-align:center}
+      .dashboard{grid-template-columns:1fr 1fr}
+      .table-wrap{display:none}.cards{display:grid;gap:10px}
+      .section-head{display:block}.section-head p{margin-top:4px}
+    }
+    @media(max-width:420px){.wrap{width:min(100% - 18px,1120px)}.dashboard{gap:8px}.stat{padding:13px 8px}.stat strong{font-size:20px}}
+  </style>
+</head>
+<body>
+  <div class="topbar"><div class="topbar-inner"><span>🇮🇳</span><strong>X ELECTRONICES • Customer Transaction Portal</strong><span><a href="tel:+919163754511">☎ 91637 54511</a></span></div></div>
+
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="index.html">
+        <img src="x-electronices-logo.png" alt="X ELECTRONICES logo">
+        <span><b>X ELECTRONICES</b><small>Your Satisfaction Is Our Responsibility</small></span>
+      </a>
+      <a class="back" href="index.html">← Back to Website</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow">CUSTOMER PORTAL</div>
+      <h1>Your Transaction History</h1>
+      <p>Enter your registered mobile number to view the transaction records associated with your X ELECTRONICES customer profile.</p>
+    </section>
+
+    <section class="search-card">
+      <label for="phoneNumberInput">Registered Mobile Number</label>
+      <div class="search-row">
+        <input id="phoneNumberInput" type="tel" inputmode="numeric" autocomplete="tel" maxlength="10" placeholder="Enter 10-digit mobile number" aria-label="Registered mobile number">
+        <button id="searchButton" type="button">Search</button>
+      </div>
+      <p class="hint">Please enter the same mobile number registered with X ELECTRONICES.</p>
+    </section>
+
+    <div class="notice">
+      <strong>Privacy note:</strong> this portal is a customer lookup interface. The Google Sheet used as its data source must be configured carefully. A publicly published CSV can technically be accessed by anyone who knows the feed URL, so this page should not be treated as password-level authentication.
+    </div>
+
+    <div id="message" class="hidden" role="status"></div>
+
+    <section id="customerProfile" class="profile hidden">
+      <div class="profile-grid">
+        <img id="customerDp" class="avatar" src="" alt="Customer profile picture">
+        <div>
+          <div id="loyaltyBadge" class="member">🥉 Bronze Member</div>
+          <h2 id="customerName">Customer</h2>
+          <div class="meta">
+            <span id="customerPhone" class="pill"></span>
+            <span id="customerEmail" class="pill"></span>
+            <span id="customerAddress" class="pill"></span>
+          </div>
+        </div>
+        <a class="profile-action" href="https://wa.me/919163754511?text=I%20want%20to%20update%20my%20profile%20on%20the%20X%20ELECTRONICES%20customer%20portal." target="_blank" rel="noopener">Update Profile</a>
+      </div>
+    </section>
+
+    <section id="dashboard" class="dashboard hidden" aria-label="Customer summary">
+      <div class="stat"><strong id="totalTxn">0</strong><span>Total Transactions</span></div>
+      <div class="stat"><strong id="customerRankCard">—</strong><span>Customer Rank</span></div>
+      <div class="stat"><strong id="lastTxnDays">—</strong><span>Last Activity</span></div>
+      <div class="stat"><strong id="feedingIndiaTotal">₹0.00</strong><span>Feed India Contribution</span></div>
+    </section>
+
+    <section id="orderHistoryContainer" class="hidden">
+      <div class="section-head">
+        <div><h2>Your Transactions</h2><p>Latest records are shown first.</p></div>
+      </div>
+
+      <div class="table-wrap">
+        <table aria-label="Transaction history">
+          <thead><tr>
+            <th>ID</th><th>Service</th><th>Consumer ID</th><th>Txn Date</th><th>Next Date</th><th>Contribution</th><th>Operator</th><th>Amount</th>
+          </tr></thead>
+          <tbody id="orderTableBody"></tbody>
+        </table>
+      </div>
+
+      <div id="transactionCards" class="cards"></div>
+      <button id="viewMoreButton" class="more hidden" type="button">View More</button>
+    </section>
+  </main>
+
+  <footer>
+    <strong>X ELECTRONICES</strong><br>
+    Your Trusted Digital Service Partner • Liluah, Howrah, West Bengal<br>
+    ⭐ 200+ Google Reviews • info@xelectronices.in • www.xelectronices.in<br>
+    © 2026 X ELECTRONICES. All Rights Reserved.
+  </footer>
+
+<script>
+(() => {
+  const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTBos64rKRlWnzMi8j03vo1oOqSz9XP5iVK9V_gA3_HptGvbSsaksDqYAxpHo2ogRsI7Wjja80TKrZd/pub?gid=344815140&single=true&output=csv";
+  const PAGE_SIZE = 15;
+  let allOrders = [], displayedCount = 0;
+
+  const $ = id => document.getElementById(id);
+  const escapeHtml = value => String(value ?? "").replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+
+  function parseCSV(text) {
+    const rows=[]; let row=[], cell="", quoted=false;
+    for(let i=0;i<text.length;i++){
+      const c=text[i], n=text[i+1];
+      if(c === '"' && quoted && n === '"'){ cell+='"'; i++; continue; }
+      if(c === '"'){ quoted=!quoted; continue; }
+      if(c === ',' && !quoted){ row.push(cell); cell=""; continue; }
+      if((c === '\n' || c === '\r') && !quoted){
+        if(c === '\r' && n === '\n') i++;
+        row.push(cell); cell="";
+        if(row.some(v=>v.trim()!=="")) rows.push(row);
+        row=[]; continue;
+      }
+      cell+=c;
+    }
+    if(cell!=="" || row.length){ row.push(cell); rows.push(row); }
+    return rows;
+  }
+
+  function normalizePhone(v){ return String(v||"").replace(/\D/g,"").slice(-10); }
+
+  function dateValue(value){
+    const s=String(value||"").trim().replace(/"/g,"");
+    const m=s.match(/^(\d{1,2})[\/-](\d{1,2})[\/-](\d{2,4})$/);
+    if(!m) return null;
+    let y=+m[3]; if(y<100)y+=2000;
+    const d=new Date(y,+m[2]-1,+m[1]);
+    return Number.isNaN(d.getTime()) ? null : d;
+  }
+
+  function formatMoney(v){
+    const n=parseFloat(String(v??"").replace(/[^\d.-]/g,""));
+    return Number.isFinite(n) ? "₹"+n.toFixed(2) : "₹0.00";
+  }
+
+  function setMessage(text, type="error"){
+    const el=$("message");
+    el.className=type==="error" ? "error" : "";
+    el.textContent=text;
+    el.classList.remove("hidden");
+  }
+  function clearMessage(){ $("message").classList.add("hidden"); }
+
+  function renderMore(){
+    const slice=allOrders.slice(displayedCount, displayedCount+PAGE_SIZE);
+    const table=$("orderTableBody"), cards=$("transactionCards");
+    slice.forEach(o=>{
+      table.insertAdjacentHTML("beforeend", `<tr>
+        <td>${escapeHtml(o.ID)}</td><td>${escapeHtml(o.Service)}</td><td>${escapeHtml(o.ConsumerID)}</td>
+        <td>${escapeHtml(o.Txndate)}</td><td>${escapeHtml(o.NextDate)}</td><td>${escapeHtml(o.feeding)}</td>
+        <td>${escapeHtml(o.operator)}</td><td>${escapeHtml(o.TXNAmount)}</td>
+      </tr>`);
+      cards.insertAdjacentHTML("beforeend", `<article class="txn-card">
+        <div class="txn-top"><span class="txn-service">${escapeHtml(o.Service)}</span><span class="txn-amount">${escapeHtml(o.TXNAmount)}</span></div>
+        <div class="txn-grid">
+          <div><small>Transaction ID</small>${escapeHtml(o.ID)}</div>
+          <div><small>Date</small>${escapeHtml(o.Txndate)}</div>
+          <div><small>Consumer ID</small>${escapeHtml(o.ConsumerID)}</div>
+          <div><small>Next Date</small>${escapeHtml(o.NextDate)}</div>
+          <div><small>Contribution</small>${escapeHtml(o.feeding)}</div>
+          <div><small>Operator</small>${escapeHtml(o.operator)}</div>
+        </div>
+      </article>`);
+    });
+    displayedCount += slice.length;
+    $("viewMoreButton").classList.toggle("hidden", displayedCount >= allOrders.length);
+  }
+
+  function resetResults(){
+    $("customerProfile").classList.add("hidden");
+    $("dashboard").classList.add("hidden");
+    $("orderHistoryContainer").classList.add("hidden");
+    $("orderTableBody").innerHTML="";
+    $("transactionCards").innerHTML="";
+    $("viewMoreButton").classList.add("hidden");
+  }
+
+  async function fetchOrderHistory(){
+    const phone=normalizePhone($("phoneNumberInput").value);
+    clearMessage(); resetResults();
+    if(phone.length!==10){ setMessage("Please enter a valid 10-digit registered mobile number."); return; }
+
+    const btn=$("searchButton");
+    btn.disabled=true; btn.textContent="Loading…";
+
+    try{
+      const response=await fetch(SHEET_CSV_URL,{cache:"no-store"});
+      if(!response.ok) throw new Error("Sheet unavailable");
+      const rows=parseCSV(await response.text());
+      if(rows.length<2) throw new Error("No data");
+
+      const repeat={}; const matches=[];
+      rows.slice(1).forEach(cols=>{
+        if(cols.length<12) return;
+        const rowPhone=normalizePhone(cols[1]);
+        if(!rowPhone) return;
+        repeat[rowPhone]=(repeat[rowPhone]||0)+1;
+        if(rowPhone===phone){
+          matches.push({
+            ID:cols[4],Service:cols[5],ConsumerID:cols[6],Txndate:cols[7],
+            NextDate:cols[8],feeding:cols[9],operator:cols[10],TXNAmount:cols[11]
+          });
+        }
+      });
+
+      if(!matches.length){
+        setMessage("No transaction records were found for this mobile number.");
+        return;
+      }
+
+      matches.sort((a,b)=>(dateValue(b.Txndate)?.getTime()||0)-(dateValue(a.Txndate)?.getTime()||0));
+      const phones=Object.keys(repeat).sort((a,b)=>repeat[b]-repeat[a]);
+      const rank=phones.indexOf(phone)+1;
+
+      // Customer profile fields are taken from the first matching row.
+      const row=rows.slice(1).find(cols=>normalizePhone(cols[1])===phone) || [];
+      const name=row[0]||"X ELECTRONICES Customer";
+      const email=row[2]||"";
+      const address=row[3]||"";
+      const dp=row[12]||"";
+
+      $("customerDp").src=dp || "favicon.png";
+      $("customerDp").alt=`${name} profile picture`;
+      $("customerName").textContent=name;
+      $("customerPhone").textContent="📱 "+phone;
+      $("customerEmail").textContent=email ? "✉ "+email : "Email not provided";
+      $("customerAddress").textContent=address ? "📍 "+address : "Address not provided";
+      $("customerRankCard").textContent="#"+rank;
+      $("totalTxn").textContent=matches.length;
+
+      let badge="🥉 Bronze Member";
+      if(matches.length>=50) badge="💎 Diamond Member";
+      else if(matches.length>=25) badge="🥇 Gold Member";
+      else if(matches.length>=10) badge="🥈 Silver Member";
+      $("loyaltyBadge").textContent=badge;
+
+      const latest=dateValue(matches[0].Txndate);
+      if(latest){
+        const diff=Math.max(0,Math.floor((new Date()-latest)/86400000));
+        $("lastTxnDays").textContent=diff===0?"Today":`${diff}d ago`;
+      } else $("lastTxnDays").textContent="—";
+
+      const totalContribution=matches.reduce((s,o)=>{
+        const n=parseFloat(String(o.feeding||"").replace(/[^\d.-]/g,""));
+        return s+(Number.isFinite(n)?n:0);
+      },0);
+      $("feedingIndiaTotal").textContent="₹"+totalContribution.toFixed(2);
+
+      allOrders=matches; displayedCount=0;
+      $("customerProfile").classList.remove("hidden");
+      $("dashboard").classList.remove("hidden");
+      $("orderHistoryContainer").classList.remove("hidden");
+      renderMore();
+      $("customerProfile").scrollIntoView({behavior:"smooth",block:"start"});
+    }catch(err){
+      console.error(err);
+      setMessage("We couldn't load the transaction data right now. Please try again later or contact X ELECTRONICES on WhatsApp.");
+    }finally{
+      btn.disabled=false; btn.textContent="Search";
+    }
+  }
+
+  $("searchButton").addEventListener("click",fetchOrderHistory);
+  $("phoneNumberInput").addEventListener("keydown",e=>{if(e.key==="Enter")fetchOrderHistory();});
+  $("viewMoreButton").addEventListener("click",renderMore);
+})();
+</script>
+</body>
+</html>
