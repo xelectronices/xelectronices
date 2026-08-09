@@ -15,16 +15,30 @@
   <link rel="icon" href="favicon.png?v=2" type="image/png">
   <link rel="stylesheet" href="style.css">
 <style>
-/* X ELECTRONICES — sticky navigation */
-header {
+/* X ELECTRONICES — keep the complete top header intact while scrolling */
+.site-header-fixed {
   position: sticky;
   top: 0;
   z-index: 1000;
+}
+
+/* Keep sticky navigation above page content and preserve the existing design. */
+.site-header-fixed .site-header {
+  position: relative;
+  z-index: 1001;
+}
+
+@media (max-width: 768px) {
+  .site-header-fixed {
+    position: sticky;
+    top: 0;
+  }
 }
 </style>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="site-header-fixed">
   <div class="topbar">
     <div class="container topbar-inner">
       <span>🇮🇳 A West Bengal People's Brand</span>
@@ -59,6 +73,7 @@ header {
       </nav>
     </div>
   </header>
+  </div>
 
   <main id="main-content">
     <section class="hero" id="home">
