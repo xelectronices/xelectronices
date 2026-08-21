@@ -1104,20 +1104,27 @@ document.addEventListener('DOMContentLoaded',async()=>{
 }
 
 @media(max-width:480px){
+
+  /* AI BUTTON — ABOVE WHATSAPP */
   #xeAiButton{
-    right:15px;
-    bottom:75px;
+    right:18px;
+    bottom:220px;
     width:54px;
     height:54px;
+    z-index:100001;
   }
 
+  /* AI CHAT */
   .xe-ai-chat{
     right:10px;
-    bottom:140px;
+    bottom:285px;
     width:calc(100vw - 20px);
     height:520px;
+    max-height:calc(100vh - 310px);
+    z-index:100002;
   }
-}
+
+  }
 </style>
 
 <script>
