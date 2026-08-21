@@ -878,6 +878,478 @@ document.addEventListener('DOMContentLoaded',async()=>{
   });
 })();
 </script>
+<!-- X ELECTRONICES AI ASSISTANT -->
+<div id="xeAiButton" aria-label="Open X ELECTRONICES Assistant">
+  🤖
+</div>
 
+<div id="xeAiChat" class="xe-ai-chat" aria-hidden="true">
+  <div class="xe-ai-header">
+    <div>
+      <strong>🤖 X ELECTRONICES Assistant</strong>
+      <small>Digital Service Assistant</small>
+    </div>
+    <button id="xeAiClose" aria-label="Close">×</button>
+  </div>
+
+  <div id="xeAiMessages" class="xe-ai-messages">
+    <div class="xe-ai-msg bot">
+      👋 Hello! I'm the X ELECTRONICES Assistant.<br><br>
+      I can help you with our digital services, applications,
+      payments and general information.
+    </div>
+
+    <div class="xe-ai-suggestions">
+      <button onclick="xeAsk('What services do you provide?')">Our Services</button>
+      <button onclick="xeAsk('How can I apply for a voter card?')">Voter Card</button>
+      <button onclick="xeAsk('How can I pay Khajna?')">Khajna Payment</button>
+      <button onclick="xeAsk('How can I contact X ELECTRONICES?')">Contact Us</button>
+    </div>
+  </div>
+
+  <div class="xe-ai-input">
+    <input
+      id="xeAiInput"
+      type="text"
+      placeholder="Ask something..."
+      autocomplete="off"
+    >
+    <button onclick="xeSend()">➤</button>
+  </div>
+</div>
+
+<style>
+#xeAiButton{
+  position:fixed;
+  right:20px;
+  bottom:85px;
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  background:#111827;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:27px;
+  cursor:pointer;
+  z-index:99998;
+  box-shadow:0 8px 25px rgba(0,0,0,.25);
+  transition:.25s ease;
+}
+
+#xeAiButton:hover{
+  transform:scale(1.08);
+}
+
+.xe-ai-chat{
+  position:fixed;
+  right:20px;
+  bottom:155px;
+  width:370px;
+  max-width:calc(100vw - 30px);
+  height:560px;
+  max-height:calc(100vh - 180px);
+  background:#fff;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 20px 60px rgba(0,0,0,.25);
+  z-index:99999;
+  display:none;
+  flex-direction:column;
+  border:1px solid #e5e7eb;
+}
+
+.xe-ai-chat.active{
+  display:flex;
+  animation:xeAiOpen .25s ease;
+}
+
+@keyframes xeAiOpen{
+  from{
+    opacity:0;
+    transform:translateY(15px) scale(.97);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0) scale(1);
+  }
+}
+
+.xe-ai-header{
+  padding:17px 18px;
+  background:linear-gradient(135deg,#111827,#374151);
+  color:#fff;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.xe-ai-header strong{
+  display:block;
+  font-size:15px;
+}
+
+.xe-ai-header small{
+  display:block;
+  margin-top:4px;
+  opacity:.75;
+  font-size:11px;
+}
+
+#xeAiClose{
+  border:0;
+  background:transparent;
+  color:#fff;
+  font-size:27px;
+  cursor:pointer;
+  line-height:1;
+}
+
+.xe-ai-messages{
+  flex:1;
+  overflow-y:auto;
+  padding:16px;
+  background:#f8fafc;
+}
+
+.xe-ai-msg{
+  max-width:88%;
+  padding:11px 13px;
+  margin-bottom:12px;
+  border-radius:14px;
+  font-size:13px;
+  line-height:1.55;
+}
+
+.xe-ai-msg.bot{
+  background:#fff;
+  border:1px solid #e5e7eb;
+  color:#1f2937;
+  border-bottom-left-radius:4px;
+}
+
+.xe-ai-msg.user{
+  margin-left:auto;
+  background:#111827;
+  color:#fff;
+  border-bottom-right-radius:4px;
+}
+
+.xe-ai-suggestions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-top:5px;
+}
+
+.xe-ai-suggestions button{
+  border:1px solid #d1d5db;
+  background:#fff;
+  border-radius:20px;
+  padding:7px 10px;
+  font-size:11px;
+  cursor:pointer;
+}
+
+.xe-ai-suggestions button:hover{
+  background:#f1f5f9;
+}
+
+.xe-ai-input{
+  display:flex;
+  gap:8px;
+  padding:12px;
+  background:#fff;
+  border-top:1px solid #e5e7eb;
+}
+
+#xeAiInput{
+  flex:1;
+  min-width:0;
+  border:1px solid #d1d5db;
+  border-radius:24px;
+  padding:11px 14px;
+  outline:none;
+  font-size:13px;
+}
+
+#xeAiInput:focus{
+  border-color:#6b7280;
+}
+
+.xe-ai-input button{
+  width:43px;
+  height:43px;
+  border:0;
+  border-radius:50%;
+  background:#111827;
+  color:#fff;
+  cursor:pointer;
+  font-size:17px;
+}
+
+.xe-ai-wa{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  margin-top:9px;
+  padding:9px 13px;
+  border-radius:20px;
+  background:#25D366;
+  color:#fff !important;
+  text-decoration:none;
+  font-size:12px;
+  font-weight:600;
+}
+
+@media(max-width:480px){
+  #xeAiButton{
+    right:15px;
+    bottom:75px;
+    width:54px;
+    height:54px;
+  }
+
+  .xe-ai-chat{
+    right:10px;
+    bottom:140px;
+    width:calc(100vw - 20px);
+    height:520px;
+  }
+}
+</style>
+
+<script>
+const XE_WHATSAPP = "9163754511";
+
+const xeKnowledge = [
+
+  {
+    keywords:["service","services","what do you provide","what do you offer"],
+    answer:`<strong>X ELECTRONICES Digital Services</strong><br><br>
+    We provide a wide range of digital and government-related services,
+    including PAN Card, Voter Card, Ration Card, Trade Licence,
+    Udyam Aadhaar, Land Details, Khajna Payment, Property Tax Payment,
+    UPI services, railway ticket booking, AEPS, printing and other
+    digital services.<br><br>
+    Customers across West Bengal can contact us through WhatsApp or phone
+    for available services.`
+  },
+
+  {
+    keywords:["pan","pan card"],
+    answer:`We can assist with <strong>PAN Card services</strong>.
+    Please contact X ELECTRONICES on WhatsApp for the current requirements
+    and application assistance.`
+  },
+
+  {
+    keywords:["voter","voter card","voter id","epic"],
+    answer:`We can assist with <strong>Voter Card services</strong>,
+    including application-related digital assistance.
+    Contact us on WhatsApp for the current document requirements.`
+  },
+
+  {
+    keywords:["ration","ration card"],
+    answer:`X ELECTRONICES provides assistance with
+    <strong>Ration Card-related digital services</strong>.
+    Contact us on WhatsApp for current requirements and assistance.`
+  },
+
+  {
+    keywords:["khajna","land tax","land revenue"],
+    answer:`We provide assistance with <strong>Khajna Payment</strong>
+    and related land-service processes in West Bengal.
+    Contact us on WhatsApp for assistance.`
+  },
+
+  {
+    keywords:["property tax","municipal tax"],
+    answer:`We can assist with <strong>Property Tax Payment</strong>.
+    Contact X ELECTRONICES through WhatsApp for assistance.`
+  },
+
+  {
+    keywords:["trade licence","trade license"],
+    answer:`We provide digital assistance for
+    <strong>Trade Licence-related services</strong>.
+    Please contact us on WhatsApp for current requirements.`
+  },
+
+  {
+    keywords:["udyam","udyam aadhaar","msme"],
+    answer:`We provide assistance with
+    <strong>Udyam Aadhaar / Udyam Registration</strong>.
+    Contact X ELECTRONICES on WhatsApp for assistance.`
+  },
+
+  {
+    keywords:["annapurna","annapurna yojna","application status"],
+    answer:`You can now check your
+    <strong>Annapurna Yojna application status online</strong>.
+    If you need assistance, contact X ELECTRONICES on WhatsApp.`
+  },
+
+  {
+    keywords:["transaction","transaction page","transaction history"],
+    answer:`You can access the X ELECTRONICES
+    <strong>Transaction Page</strong> using your registered mobile number
+    and Transaction PIN.`
+  },
+
+  {
+    keywords:["whatsapp","contact","phone","number","call"],
+    answer:`You can contact <strong>X ELECTRONICES</strong> on WhatsApp
+    or phone for digital service assistance.<br><br>
+    <a class="xe-ai-wa"
+       href="https://wa.me/9163754511?text=Hello%20X%20ELECTRONICES%2C%20I%20need%20help%20with%20a%20digital%20service."
+       target="_blank">
+       💬 Chat on WhatsApp
+    </a>`
+  },
+
+  {
+    keywords:["where","location","address","shop"],
+    answer:`Our physical X ELECTRONICES store is located in
+    <strong>Liluah, Howrah, West Bengal</strong>.
+    However, our digital-service assistance is available to customers
+    across West Bengal through WhatsApp and phone for eligible services.`
+  },
+
+  {
+    keywords:["liluah","howrah"],
+    answer:`X ELECTRONICES started its journey in
+    <strong>Liluah, Howrah</strong>.
+    Liluah is our physical-store location, while our vision is to grow
+    beyond West Bengal and expand across India.`
+  },
+
+  {
+    keywords:["birthday","happy birthday"],
+    answer:`🎂 X ELECTRONICES also has a special birthday celebration
+    feature on the Transaction Page for verified customers on their
+    birthday.`
+  },
+
+  {
+    keywords:["anniversary","2nd anniversary","milestone","achievement"],
+    answer:`X ELECTRONICES completed its
+    <strong>2nd Anniversary on 18 July 2026</strong>, serving
+    <strong>1,500+ customers</strong> and reaching
+    <strong>200+ 5-star Google reviews</strong>.`
+  }
+
+];
+
+function xeFindAnswer(text){
+
+  text = text.toLowerCase();
+
+  for(const item of xeKnowledge){
+
+    for(const keyword of item.keywords){
+
+      if(text.includes(keyword.toLowerCase())){
+        return item.answer;
+      }
+
+    }
+
+  }
+
+  return null;
+}
+
+function xeAddMessage(message,type){
+
+  const box = document.getElementById("xeAiMessages");
+
+  const div = document.createElement("div");
+
+  div.className = "xe-ai-msg " + type;
+
+  div.innerHTML = message;
+
+  box.appendChild(div);
+
+  box.scrollTop = box.scrollHeight;
+}
+
+function xeAsk(question){
+
+  document.getElementById("xeAiInput").value = "";
+
+  xeAddMessage(question,"user");
+
+  setTimeout(()=>{
+
+    const answer = xeFindAnswer(question);
+
+    if(answer){
+
+      xeAddMessage(answer,"bot");
+
+    }else{
+
+      xeAddMessage(
+        `I'm not completely sure about that. 🤔<br><br>
+        Please contact X ELECTRONICES directly and our team
+        will assist you.<br>
+        <a class="xe-ai-wa"
+           href="https://wa.me/${XE_WHATSAPP}?text=Hello%20X%20ELECTRONICES%2C%20I%20need%20assistance%20with%20a%20digital%20service."
+           target="_blank">
+           💬 Contact X ELECTRONICES
+        </a>`,
+        "bot"
+      );
+
+    }
+
+  },450);
+}
+
+function xeSend(){
+
+  const input = document.getElementById("xeAiInput");
+
+  const question = input.value.trim();
+
+  if(!question) return;
+
+  xeAsk(question);
+}
+
+document.getElementById("xeAiButton").addEventListener("click",()=>{
+
+  const chat = document.getElementById("xeAiChat");
+
+  chat.classList.add("active");
+
+  chat.setAttribute("aria-hidden","false");
+
+  document.getElementById("xeAiInput").focus();
+
+});
+
+document.getElementById("xeAiClose").addEventListener("click",()=>{
+
+  const chat = document.getElementById("xeAiChat");
+
+  chat.classList.remove("active");
+
+  chat.setAttribute("aria-hidden","true");
+
+});
+
+document.getElementById("xeAiInput").addEventListener("keydown",(e)=>{
+
+  if(e.key === "Enter"){
+    xeSend();
+  }
+
+});
+</script>
 </body>
 </html>
