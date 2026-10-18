@@ -17,8 +17,8 @@ window.XE_BLOG_NOTICES = [
   {
     type: "service",
     label: "Special Service Announcement",
-    title: "Now We are offering Laptop, Computer, Printer, CCTV Camera Installation & Repair Services ",
-    description: "We now offer Laptop, Computer & Printer Repair, CCTV Camera Installation & Repair Services for homes, offices, and shops.",
+    title: "Laptop, Computer, Printer, CCTV Camera Installation & Repair Services ",
+    description: "We now offering A to Z parts Repair for Laptop, Computer & Printer. Also CCTV Camera Installation & Repair Services for homes, offices, and shops.",
     meta: ["Laptop Repair", "Computer Repair", "CCTV Installation", "Printer Repair"],
     whatsappText: "Hello X ELECTRONICES, I want to check my Annapurna Yojna application status. Please guide me."
   },
