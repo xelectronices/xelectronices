@@ -23,11 +23,11 @@ window.XE_BLOG_NOTICES = [
     whatsappText: "Hello X ELECTRONICES, I want to check my Annapurna Yojna application status. Please guide me."
   },
   {
-    type: "closure",
-    label: "Shop Closure Notice",
-    title: "Shop Will Stay Closed on 2nd & 3rd October 2026",
-    description: "Our physical X ELECTRONICES store in Liluah, Howrah will remain closed on 2nd October 2026 and 3rd October 2026. Please plan your in-store visit accordingly. For eligible digital services, you may contact us through WhatsApp or phone.",
-    meta: ["2 October 2026", "3 October 2026", "Liluah Store"],
+    type: "Event & Notice",
+    label: "Events & Notice Board",
+    title: "শুভ শারদীয়ার প্রীতি শুভেচ্ছা ও আন্তরিক অভিনন্দন",
+    description: "শিউলি ফুলের গন্ধ মাখা শরৎ আকাশখানী, কাশফুল আর ঘাসের দোলায় কার ঐ পদধ্বনি? শারদীয় শুভেচ্ছা। মা দুর্গা আপনার এবং আপনার পরিবারের মঙ্গল করুন",
+    meta: ["Happy Durga Puja", "শুভ শারদীয়ার প্রীতি, শুভেচ্ছা ও আন্তরিক অভিনন্দন", "Liluah"],
     whatsappText: "Hello X ELECTRONICES, I need help with a digital service during the shop closure period."
   }
 ];
