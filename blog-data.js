@@ -17,9 +17,9 @@ window.XE_BLOG_NOTICES = [
   {
     type: "service",
     label: "Special Service Announcement",
-    title: "Now You Can Check Your Annapurna Yojna Application Status Online",
-    description: "X ELECTRONICES is now providing online assistance for checking Annapurna Yojna application status. Contact us on WhatsApp or phone for guidance about the status-check process, required details and available assistance.",
-    meta: ["Annapurna Yojna", "Online Status Check", "West Bengal Digital Service"],
+    title: "Now We are offering Laptop, Computer, Printer, CCTV Camera Installation & Repair Services ",
+    description: "We now offer Laptop, Computer & Printer Repair, CCTV Camera Installation & Repair Services for homes, offices, and shops.",
+    meta: ["Laptop Repair", "Computer Repair", "CCTV Installation", "Printer Repair"],
     whatsappText: "Hello X ELECTRONICES, I want to check my Annapurna Yojna application status. Please guide me."
   },
   {
