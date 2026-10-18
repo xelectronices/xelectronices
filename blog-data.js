@@ -20,7 +20,7 @@ window.XE_BLOG_NOTICES = [
     title: "Laptop, Computer, Printer, CCTV Camera Installation & Repair Services ",
     description: "We now offering A to Z parts Repair for Laptop, Computer & Printer. Also CCTV Camera Installation & Repair Services for homes, offices, and shops.",
     meta: ["Laptop Repair", "Computer Repair", "CCTV Installation", "Printer Repair"],
-    whatsappText: "Hello X ELECTRONICES, I want to check my Annapurna Yojna application status. Please guide me."
+    whatsappText: "Hello X ELECTRONICES, I want to book an appointment for the repair service."
   },
   {
     type: "Event & Notice",
@@ -28,7 +28,7 @@ window.XE_BLOG_NOTICES = [
     title: "শুভ শারদীয়ার প্রীতি শুভেচ্ছা ও আন্তরিক অভিনন্দন",
     description: "শিউলি ফুলের গন্ধ মাখা শরৎ আকাশখানী, কাশফুল আর ঘাসের দোলায় কার ঐ পদধ্বনি? শারদীয় শুভেচ্ছা। মা দুর্গা আপনার এবং আপনার পরিবারের মঙ্গল করুন",
     meta: ["Happy Durga Puja", "শুভ শারদীয়ার প্রীতি, শুভেচ্ছা ও আন্তরিক অভিনন্দন", "Liluah"],
-    whatsappText: "Hello X ELECTRONICES, I need help with a digital service during the shop closure period."
+    whatsappText: "Hello X ELECTRONICES, I'm looking for a digital service."
   }
 ];
 
