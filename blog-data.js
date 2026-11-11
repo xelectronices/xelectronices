@@ -25,9 +25,9 @@ window.XE_BLOG_NOTICES = [
   {
     type: "Event & Notice",
     label: "Events & Notice Board",
-    title: "শুভ শারদীয়ার প্রীতি শুভেচ্ছা ও আন্তরিক অভিনন্দন",
-    description: "শিউলি ফুলের গন্ধ মাখা শরৎ আকাশখানী, কাশফুল আর ঘাসের দোলায় কার ঐ পদধ্বনি? শারদীয় শুভেচ্ছা। মা দুর্গা আপনার এবং আপনার পরিবারের মঙ্গল করুন",
-    meta: ["Happy Durga Puja", "শুভ শারদীয়ার প্রীতি, শুভেচ্ছা ও আন্তরিক অভিনন্দন", "Liluah"],
+    title: "छठ पूजा की हार्दिक शुभकामनाएं",
+    description: "छठी मैया और सूर्य देव की कृपा आपके जीवन में सुख, समृद्धि और सफलता लाएं",
+    meta: ["Happy Chhath Puja", "छठ पूजा", "छठी मैया", "Liluah"],
     whatsappText: "Hello X ELECTRONICES, I'm looking for a digital service."
   }
 ];
